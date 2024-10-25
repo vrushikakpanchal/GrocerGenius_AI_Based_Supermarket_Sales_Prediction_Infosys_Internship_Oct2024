@@ -1,1 +1,2 @@
 # GrocerGenius_AI_Based_Supermarket_Sales_Prediction_nfosys_Internship_Oct2024
+![A_vibrant_supermarket_scene_supermarket_sales_scene](https://github.com/user-attachments/assets/fc476649-5835-49d1-80b1-5426f6808697)
