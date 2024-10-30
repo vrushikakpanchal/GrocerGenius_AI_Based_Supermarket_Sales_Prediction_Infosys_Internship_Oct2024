@@ -1,2 +1,15 @@
-# GrocerGenius_AI_Based_Supermarket_Sales_Prediction_nfosys_Internship_Oct2024
-![A_vibrant_supermarket_scene_supermarket_sales_scene](https://github.com/user-attachments/assets/fc476649-5835-49d1-80b1-5426f6808697)
+# GrocerGenius: AI-Based Supermarket Sales Prediction
+
+## Objective
+Develop an AI model to predict supermarket sales based on historical transaction data, paired with an intuitive user interface for easy interaction.
+
+## Dataset
+- **Supermarket Sales Dataset**: Contains transaction details for accurate sales prediction.
+
+## Components
+- **User Interface**: Allows data upload and displays prediction results.
+- **Data Processing Pipeline**: Manages data preparation, model training, and optimization.
+- **Storage & Deployment**: Manages model storage and deployment for accessibility.
+
+## License
+This project is licensed under the MIT License.
