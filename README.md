@@ -184,7 +184,8 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgments
 
-- **Mentor**: Amal Salilan (@amalsalilan) for his invaluable guidance and support.
+- **Mentor**: Amal Salilan (@amalsalilan) 
+
 - **Community**: Thanks to the open-source community for providing tools and resources.
 
 ---
