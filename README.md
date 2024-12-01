@@ -1,17 +1,27 @@
-# GrocerGenius: AI-Based Supermarket Sales Prediction
+# Grocery Sales Prediction
 
-**Objective:** Develop an AI model to forecast supermarket sales using historical data, complemented by an intuitive user interface.
+Welcome to the Grocery Sales Prediction project. This project aims to predict the sales of grocery items using machine learning models.
 
-**Dataset:** Supermarket Sales Dataset detailing sales transactions.
+## Directory Structure
 
-**Project Workflow:**
+- **data_alchemy/**: Contains all datasets.
+  - **raw/**: Raw datasets.
+  - **processed/**: Preprocessed datasets.
+  - **external/**: External datasets (if any).
+- **model_factory/**: Stores models and encoders.
+  - **models/**: Trained model files.
+  - **encoders/**: Encoders and mappings.
+  - **features/**: Feature configurations.
+- **codebase/**: Source code and scripts.
+- **notebooks/**: Jupyter notebooks for exploration.
+- **logs/**: Logs for tracking and debugging.
+- **reports/**: Reports and visualizations.
+  - **figures/**: Plots and images.
 
-1. **Data Collection & Exploration:** Define the prediction task and understand dataset features.
-2. **Exploratory Data Analysis (EDA):** Analyze and visualize feature distributions and relationships.
-3. **Data Preprocessing:** Handle missing values, perform feature engineering, and encode categorical features.
-4. **Model Building & Evaluation:** Train models using cross-validation, optimize hyperparameters, and evaluate performance.
-5. **Deployment & Documentation:** Deploy the model with a web framework, create an API, and document the process.
+## Setup Instructions
 
+1. **Clone the Repository**
 
-
-This project is part of the Infosys Internship Program 2024
+   ```bash
+   git clone https://github.com/yourusername/grocery_sales_prediction.git
+   cd grocery_sales_prediction
