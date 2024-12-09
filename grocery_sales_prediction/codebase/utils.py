@@ -7,7 +7,9 @@ from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder
 import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
+from xgboost import XGBRegressor
 from sklearn.metrics import mean_squared_error, r2_score
+from xgboost import XGBRegressor
 
 # Define base directories relative to this file
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -153,9 +155,27 @@ def train_model(data):
     # Split data into training and test sets
     X_train, X_test, y_train, y_test = train_test_split(X, y)
 
-    # Train the model
+    # Train the models
+    print("Optimised Model training started.")
+    xgb_model2=XGBRegressor(
+        objective='reg:squarederror',
+        eval_metric='rmse',
+        n_estimators=100,
+        learning_rate=0.1,
+        max_depth=5,
+        random_state=42)
+    xgb_model2.fit(X_train, y_train)
     rf_model = RandomForestRegressor()
     rf_model.fit(X_train, y_train)
+    y_pred = xgb_model2.predict(X_test)
+    mse = mean_squared_error(y_test, y_pred)
+    r2 = r2_score(y_test, y_pred)
+    print("Optimised Model training completed.")
+    print("Mean Squared Error:", mse)
+    print("R-squared:", r2)
+    os.makedirs(os.path.join(MODEL_DIR, 'models'), exist_ok=True)
+    joblib.dump(rf_model, MODEL_FILE)
+    print("Model saved.")
 
     # Save the trained model
     os.makedirs(os.path.join(MODEL_DIR, 'models'), exist_ok=True)
