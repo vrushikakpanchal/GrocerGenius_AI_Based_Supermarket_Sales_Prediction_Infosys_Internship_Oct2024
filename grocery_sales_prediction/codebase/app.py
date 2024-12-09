@@ -73,7 +73,7 @@ years = list(range(1985, 2010))  # Years from 1985 to 2009
 user_inputs["Outlet_Establishment_Year"] = st.selectbox(
     "Select Outlet Establishment Year:", options=years
 )
-
+# progress bar start----------------------------------->
 progress_text = "Operation in progress"
 progress_placeholder = st.empty()  # Create a placeholder for the progress bar
 my_bar = progress_placeholder.progress(0, text=progress_text)
@@ -84,9 +84,18 @@ for percent_complete in range(100):
 
 time.sleep(1)
 progress_placeholder.empty()  # Remove the progress bar after completion
+# progress bar end-------------------------------------------------->
+
+def cook_breakfast():
+    msg = st.toast("Hang tight! Crunching the numbers for your sales prediction…")
+    time.sleep(1)
+    msg.toast("Generating sales forecast—just a moment please...")
+    time.sleep(1)
+    msg.toast("Hold on while we estimate your item outlet sales…")
+
 
 # When the user clicks the "Predict" button
-if st.button("Predict"):
+if st.button("Predict",cook_breakfast()):
     # Convert user_inputs dictionary to DataFrame
     user_input_df = pd.DataFrame([user_inputs])
 
