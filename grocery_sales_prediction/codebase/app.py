@@ -1,6 +1,7 @@
 # codebase/app.py
 
 import os
+import time
 import streamlit as st
 import pandas as pd
 from utils import run_inference
@@ -73,6 +74,17 @@ user_inputs["Outlet_Establishment_Year"] = st.selectbox(
     "Select Outlet Establishment Year:", options=years
 )
 
+progress_text = "Operation in progress"
+progress_placeholder = st.empty()  # Create a placeholder for the progress bar
+my_bar = progress_placeholder.progress(0, text=progress_text)
+
+for percent_complete in range(100):
+    time.sleep(0.01)
+    my_bar.progress(percent_complete+1, text=progress_text)
+
+time.sleep(1)
+progress_placeholder.empty()  # Remove the progress bar after completion
+
 # When the user clicks the "Predict" button
 if st.button("Predict"):
     # Convert user_inputs dictionary to DataFrame
@@ -82,7 +94,6 @@ if st.button("Predict"):
     try:
         predictions = run_inference(user_input_df)
         predicted_sales = predictions[0]
-
         st.success(f"Predicted Item Outlet Sales: ${predicted_sales:.2f}")
     except Exception as e:
         st.error(f"Error during prediction: {e}")
