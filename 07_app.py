@@ -124,19 +124,19 @@ def main():
         with col1:
             st.header('📦 Product Information')
             item_identifier = st.selectbox('Item Identifier', options=sorted(['FDN15', 'FDX07', 'FDA15', 'DRC01', 'NCD19']), index=0)
-            item_weight = st.number_input('Item Weight (in kg)', min_value=0.0, max_value=100.0, value=9.3)
-            item_fat_content = st.selectbox('Item Fat Content', options=['Low Fat', 'Regular'], index=0)
-            item_visibility = st.number_input('Item Visibility', min_value=0.0, max_value=0.33, value=0.016, step=0.001)
-            item_type = st.selectbox('Item Type', options=sorted(['Dairy', 'Soft Drinks', 'Meat']), index=0)
-            item_mrp = st.number_input('Item MRP', min_value=0.0, max_value=500.0, value=249.81, step=0.01)
+            item_weight = st.number_input('Item Weight (in kg)', min_value=0.0, max_value=100.0, value=9.3, help='Weight of the product.')
+            item_fat_content = st.selectbox('Item Fat Content', options=['Low Fat', 'Regular'], index=0, help='Fat content of the product.')
+            item_visibility = st.number_input('Item Visibility', min_value=0.0, max_value=0.33, value=0.016, step=0.001, help='Visibility of the product in the store')
+            item_type = st.selectbox('Item Type', options=sorted(['Dairy', 'Soft Drinks', 'Meat', 'Fruits and Vegetables', 'Household', 'Baking Goods', 'Snack Foods', 'Frozen Foods', 'Breakfast', 'Health and Hygiene', 'Hard Drinks', 'Canned', 'Breads', 'Starchy Foods', 'Others', 'Seafood']), index=4, help='Category of the product.')
+            item_mrp = st.number_input('Item MRP', min_value=0.0, max_value=500.0, value=249.81, step=0.01, help='Maximum Retail Price of the product.')
 
         with col2:
             st.header('🏬 Store Information')
             outlet_identifier = st.selectbox('Outlet Identifier', options=sorted(['OUT049', 'OUT018', 'OUT010', 'OUT013', 'OUT027', 'OUT045']), index=0)
-            outlet_establishment_year = st.number_input('Outlet Establishment Year', min_value=1980, max_value=2020, value=1999, step=1)
-            outlet_size = st.selectbox('Outlet Size', options=['Small', 'Medium', 'High'], index=1)
-            outlet_location_type = st.selectbox('Outlet Location Type', options=['Tier 1', 'Tier 2'], index=0)
-            outlet_type = st.selectbox('Outlet Type', options=['Supermarket Type1', 'Supermarket Type2'], index=0)
+            outlet_establishment_year = st.number_input('Outlet Establishment Year', min_value=1980, max_value=2020, value=1999, step=1, help='Year the store was established.')
+            outlet_size = st.selectbox('Outlet Size', options=['Small', 'Medium', 'High'], index=1, help='Size of the store.')
+            outlet_location_type = st.selectbox('Outlet Location Type', options=['Tier 1', 'Tier 2', 'Tier 3'], index=0, help='Location type of the store.')
+            outlet_type = st.selectbox('Outlet Type', options=['Supermarket Type1', 'Supermarket Type2', 'Supermarket Type3', 'Grocery Store'], index=0, help='Type of store.')
 
         # Custom button styling with a larger font size, green background, and white text
         button_style = """
